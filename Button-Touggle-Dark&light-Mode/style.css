@@ -1,84 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {box-sizing: border-box;}
+
 body {
-    font-family: "Roboto";
-    background-color: #e5eef3;
-    text-align: center;
-    color: #f1ce64;
-    font-size: 28px;
-  }
-  
-  a {
-    color: #f1ce64;
-  }
-  
-  .share {
-    position: absolute;
-    width: 400px;
-    left: 50%;
-    margin-left: -200px;
-    top: 50%;
-    margin-top: -40px;
-    border-radius: 80px;
-  }
-  .share span {
-    width: 200px;
-    line-height: 80px;
-    display: inline-block;
-    font-weight: 700;
-    text-transform: uppercase;
-    position: absolute;
-    left: 50%;
-    margin-left: -100px;
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-    pointer-events: none;
-  }
-  .share nav {
-    font-size: 0;
-  }
-  .share a {
-    line-height: 80px;
-    width: 80px;
-    text-align: center;
-    display: inline-block;
-    background-color: #ffffff;
-    color: #ffffff;
-    overflow: hidden;
-    opacity: 1;
-    transition: all 0.3s ease-in-out;
-    margin: 0 -20px;
-    box-shadow: 3px 1px 3px rgba(0, 0, 0, 0.1);
-  }
-  .share a:nth-child(1) {
-    border-top-left-radius: 40px;
-    border-bottom-left-radius: 40px;
-    margin-left: 0;
-  }
-  .share a:nth-child(1):hover {
-    background-color: #61c5ec;
-  }
-  .share a:nth-child(2):hover {
-    background-color: #3B5998;
-  }
-  .share a:nth-child(3):hover {
-    background-color: #ea4335;
-  }
-  .share a:nth-child(4) {
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
-    margin-right: 0;
-  }
-  .share a:nth-child(4):hover {
-    background-color: #000000;
-  }
-  .share:hover span, .share.hover span {
-    opacity: 0;
-  }
-  .share:hover a, .share.hover a {
-    border-radius: 50%;
-    margin: 0 10px;
-    color: #f1ce64;
-    font-size: 28px;
-  }
-  .share:hover a:hover, .share.hover a:hover {
-    color: #fff;
-  }
+  font-family: "Montserrat", sans-serif;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.2s linear;
+}
+
+body.dark {background-color: #292c35;} /* #9b59b6 */
+
+body.dark h1, body.dark .support a {color: #fff;}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
